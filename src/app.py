@@ -52,7 +52,7 @@ def get_user(user_id):
 @app.route('/users', methods=['POST'])
 def add_user():
     user_data = request.json
-    required_properties = ["email", "first_name", "last_name", "password"]
+    required_properties = ["email", "first_name", "last_name", "password", "username"]
 
     for prop in required_properties:
         if prop not in user_data: return f"The '{prop}' property of the user was not properly written", 400 
