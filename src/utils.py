@@ -34,7 +34,7 @@ def generate_sitemap(app):
     return """
         <div style="text-align: center;">
         <img style="max-height: 250px" src='https://cdn.worldvectorlogo.com/logos/star-wars.svg' />
-        <h1>Hello there!</h1>
+        <h1>Hello there! Welcome to the Star Wars API</h1>
         <p>API HOST: <script>document.write('<input style="padding: 5px; width: 300px" type="text" value="'+window.location.href+'" />');</script></p>
         <p>Start working on your proyect by following the <a href="https://start.4geeksacademy.com/starters/flask" target="_blank">Quick Start</a></p>
         <p>Remember to specify a real endpoint path like: </p>

@@ -62,3 +62,37 @@ class Planet(db.Model):
             "diameter": self.diameter,
             "id": self.id,
         }
+    
+class Character_fav(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    character_id = db.Column(db.Integer, db.ForeignKey('character.id'))
+    character = db.relationship(Character)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship(User)
+
+    def __repr__(self):
+        return f"<Character_fav {self.character_id}>"
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "character_id": self.character_id,
+            "character_name": self.character.name,
+        }
+    
+class Planet_fav(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    planet_id = db.Column(db.Integer, db.ForeignKey('planet.id'))
+    planet = db.relationship(Planet)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship(User)
+
+    def __repr__(self):
+        return f"<Planet_fav {self.id}>"
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "planet_id": self.planet_id,
+            "planet_name": self.planet.name,
+        }
